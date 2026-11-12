@@ -1,0 +1,40 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: usuarios-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/pagoflex_usuarios?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 5MB
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+
+# JWT (cambia el secret en producción — mínimo 256 bits en Base64)
+jwt:
+  secret: FAKESECRET_u2v3w4x5y6z7a8b9c0d1
+  expiration-ms: 86400000   # 24 horas
+
+springdoc:
+  api-docs:
+    path: /api/usuarios/v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
