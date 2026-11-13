@@ -30,8 +30,8 @@ eureka:
 
 # JWT (cambia el secret en producción — mínimo 256 bits en Base64)
 jwt:
-  secret: FAKESECRET_u2v3w4x5y6z7a8b9c0d1
-  expiration-ms: 86400000   # 24 horas
+  secret: UGFnb0ZsZXhTZWNyZXRLZXlNdXlTZWd1cmFQYXJhSldUMjAyNiE=
+  expiration-ms: 86400000
 
 springdoc:
   api-docs:
