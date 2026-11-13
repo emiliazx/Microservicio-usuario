@@ -37,10 +37,9 @@ public class SecurityConfig {
             .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 // públicos
-                .requestMatchers("/api/usuarios/login", "/api/usuarios/recuperar").permitAll()
+               .requestMatchers("/api/usuarios/login", "/api/usuarios/recuperar").permitAll()
                 .requestMatchers(HttpMethod.POST, "/api/usuarios").permitAll()
-                .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/api/usuarios/v3/api-docs/**").permitAll()
-                .requestMatchers("/actuator/**").permitAll()
+                .requestMatchers("/error").permitAll()
                 // resto requiere JWT
                 .anyRequest().authenticated()
             )
